@@ -12,7 +12,7 @@ module ActiveRecord
     end
 
     def method_missing(name, *args)
-      if @@connection.columns(self.class.table_name).include?(name)
+      if @@connection.columns(self.class.table_name).include?(name) #table_name is a class level method, and class is a reserved keyword in ruby, so we have to use self.class
         @attributes[name]
       else
         super
