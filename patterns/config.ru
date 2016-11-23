@@ -5,3 +5,17 @@ require ::File.expand_path("../lib/boot", __FILE__)
 require "application"
 
 run Application.new
+
+# class App
+#   def call(env)
+#     #return the response array
+#     [
+#       200,
+#       { "Content-Type" => "text/plain"},
+#       # ["body"]
+#       [env.inspect]
+#     ]
+#   end
+# end
+
+# run App.new
