@@ -1,10 +1,10 @@
 # Start with: shotgun
 # Under Windows: rackup  (CTRL+C and restart on each change)
 
-# require ::File.expand_path("../lib/boot", __FILE__)
-# require "application"
+require ::File.expand_path("../lib/boot", __FILE__)
+require "application"
 
-# run Application.new
+run Application.new
 
 # class App
 #   def call(env)
@@ -27,31 +27,31 @@
 
 # run my_proc
 
-run -> env do
-  method = env["REQUEST_METHOD"]
-  path = enc["PATH_INFO"]
-  if block = Routes[method][path]
-    body = block.call
-    [200, {}, ["body"]]
-  else
-    [404, {}, ["Not Found"]]
-  end
-end
+# run -> env do
+#   method = env["REQUEST_METHOD"]
+#   path = enc["PATH_INFO"]
+#   if block = Routes[method][path]
+#     body = block.call
+#     [200, {}, ["body"]]
+#   else
+#     [404, {}, ["Not Found"]]
+#   end
+# end
 
-Routes = {
-  "GET" => {
-    # "path" => block
-  }
-}
+# Routes = {
+#   "GET" => {
+#     # "path" => block
+#   }
+# }
 
-def get(path, &block)
-  Routes["GET"][path] = block
-end
+# def get(path, &block)
+#   Routes["GET"][path] = block
+# end
 
-get "/" do
-  "awesome!"
-end
+# get "/" do
+#   "awesome!"
+# end
 
-get "/hello" do
-  "ok!"
-end
+# get "/hello" do
+#   "ok!"
+# end
