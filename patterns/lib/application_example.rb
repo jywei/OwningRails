@@ -1,6 +1,13 @@
 require "action_controller"
 require "application_controller"
 
+# class Object
+#   def const_missing(name)
+#     name # :User => "user"
+#     require name.to_s.downcase
+#   end
+# end
+
 class Application
   def call(env)
     request = Rack::Request.new(env)
