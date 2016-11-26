@@ -5,10 +5,10 @@ module ActionController
   class Metal
     attr_accessor :request, :response
 
-    def process(action)
+    def process(action_name)
       # action == "index"
       # `send "index"` same as `index`
-      send action # calls index
+      send action_name # calls index
     end
 
     def params
