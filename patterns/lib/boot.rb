@@ -7,6 +7,6 @@ require 'bundler/setup'
 $LOAD_PATH.unshift "lib"
 
 # Add all directories of app/ to the load path.
-Dir["app/*"].each do |path|
+Dir["app/*", "config"].each do |path|
   $LOAD_PATH << path
 end

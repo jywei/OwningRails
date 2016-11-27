@@ -9,6 +9,7 @@ class Router
   end
 
   def recognize(path)
-    @routes[path].split("#") # 'home#index' => ["home", "index"]
+    puts @routes
+    @routes[path].split('#') # 'home#index' => ['home', 'index']
   end
 end

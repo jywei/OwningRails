@@ -2,7 +2,7 @@ require "action_controller"
 require "application_controller"
 require "active_record"
 require "router"
-# require "config/routes"
+require "routes"
 
 class Application
   def call(env)
@@ -15,16 +15,16 @@ class Application
     controller = controller_class.new
     controller.request = request
     controller.response = response
-    controller.process(action_name)
+    controller.process action_name
 
     response.finish
   end
 
   def route(path)
     # path = "/home/index" => ["home", "index"]
-    _, controller, action = path.split("/") # => ["", "home", "index"] _ : ignore the first part
-    [controller || "home", action || "index"] #provide default value
-    # Routes.recognize(path)
+    # _, controller, action = path.split("/") # => ["", "home", "index"] _ : ignore the first part
+    # [controller || "home", action || "index"] #provide default value
+    Routes.recognize(path)
   end
 
   def load_controller_class(name)
