@@ -28,10 +28,7 @@ class FiltersTest < ActiveSupport::TestCase
     out = []
     FiltersTestController.new(out).process(:index)
 
-    # assert_equal [:before,
-    #               :index], out
-
-    # With after_action
+    # With before_action and after_action
     assert_equal [:before,
                   :index,
                   :after], out

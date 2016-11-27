@@ -8,6 +8,12 @@ module Rendering
     response.write render_to_string(action_or_options)
   end
 
+  def render_2_string(action)
+    path = template_path(action)
+    template = ERB.new(File.read(path))
+    template.result(binding)  #binding is only for eval (passed as second variable of eval)
+  end
+
   def render_to_string(action_or_options)
     if action_or_options.is_a? Symbol
       options = { action: action_or_options }
