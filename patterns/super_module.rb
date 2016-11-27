@@ -21,6 +21,8 @@ end
 # class Parent
 #   prepend A, B
 # end
+#
+# puts Parent.ancestors
 
 class Child < Parent
   include A, B

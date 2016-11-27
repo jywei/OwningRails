@@ -1,7 +1,17 @@
-require 'active_support/concern'
+ require 'active_support/concern'
 
 module Filters
   extend ActiveSupport::Concern
+
+  # def self.included(base) #base == ActionController::Base
+  #   base.extend ClassMethods
+  # end
+  #
+  # module ClassMethods
+  #   def before_action(method)
+  #
+  #   end
+  # end
 
   class_methods do
     def before_action(method)

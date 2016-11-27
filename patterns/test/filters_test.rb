@@ -13,7 +13,7 @@ class FiltersTestController < ApplicationController
   def before
     @out << :before
   end
-  
+
   def after
     @out << :after
   end
@@ -27,10 +27,10 @@ class FiltersTest < ActiveSupport::TestCase
   def test_filters
     out = []
     FiltersTestController.new(out).process(:index)
-    
+
     # assert_equal [:before,
     #               :index], out
-    
+
     # With after_action
     assert_equal [:before,
                   :index,
