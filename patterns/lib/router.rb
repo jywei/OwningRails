@@ -1,3 +1,5 @@
+require 'pry-byebug'
+
 class Router
   def initialize(&block)
     @routes = {}
@@ -9,7 +11,6 @@ class Router
   end
 
   def recognize(path)
-    puts @routes
     @routes[path].split('#') # 'home#index' => ['home', 'index']
   end
 end

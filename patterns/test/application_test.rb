@@ -1,5 +1,6 @@
 require "test_helper"
 require "application"
+require 'pry-byebug'
 
 class ApplicationTest < ActiveSupport::TestCase
   def setup
