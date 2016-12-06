@@ -2,6 +2,20 @@
 # Under Windows: rackup  (CTRL+C and restart on each change)
 
 require ::File.expand_path('../lib/boot',  __FILE__)
+
+class Logger   #middleware
+  def initialize(app)
+    @app = app
+  end
+
+  def call
+    puts "Calling " + env["PATH_INFO"]
+    @app.call(env)
+  end
+end
+
+use Logger
+
 require "application"
 run Application.new
 
