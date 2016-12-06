@@ -3,18 +3,22 @@
 
 require ::File.expand_path('../lib/boot',  __FILE__)
 
-class Logger   #middleware
-  def initialize(app)
-    @app = app
-  end
+# class Logger   #middleware
+#   def initialize(app)
+#     @app = app
+#   end
 
-  def call
-    puts "Calling " + env["PATH_INFO"]
-    @app.call(env)
-  end
-end
+#   def call
+#     puts "Calling " + env["PATH_INFO"]
+#     # parse(env['HTTP_COOKIES'])
+#     @app.call(env)
+#     # status, headers, body = @app.call(env)
+#     # xss_detect(body)
+#     # [status, headers, body]
+#   end
+# end
 
-use Logger
+# use Logger
 
 require "application"
 run Application.new
